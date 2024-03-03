@@ -18,7 +18,8 @@
             "regexp": "bundle generation complete"
           }
         }
-      }
+      },
+      "dependsOn":["tsc: build - tsconfig.json"]
     },
     {
       "type": "npm",
@@ -37,6 +38,15 @@
           }
         }
       }
+    },
+    {
+      "type": "typescript",
+      "tsconfig": "tsconfig.json",
+      "problemMatcher": [
+        "$tsc"
+      ],
+      "group": "build",
+      "label": "tsc: build - tsconfig.json"
     }
   ]
 }
